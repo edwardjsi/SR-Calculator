@@ -76,5 +76,3 @@ examples
 db/*.db
 *.db
 
-# Prisma (not needed in production image)
-prisma
