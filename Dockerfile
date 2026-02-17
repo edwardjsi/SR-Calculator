@@ -1,11 +1,11 @@
 # SR Calculator - Production Dockerfile
-# Simplified build for deployment
+# With Prisma support for database operations
 
 FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Install dependencies
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat openssl
 
 # Copy package files first
 COPY package.json ./
@@ -15,6 +15,9 @@ RUN npm install --legacy-peer-deps
 
 # Copy all source files
 COPY . .
+
+# Generate Prisma client
+RUN npx prisma generate
 
 # Set environment variables
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -32,6 +35,9 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
+# Install OpenSSL for Prisma
+RUN apk add --no-cache openssl
+
 # Create non-root user
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -40,6 +46,11 @@ RUN adduser --system --uid 1001 nextjs
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+
+# Copy Prisma files for runtime
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=builder /app/prisma ./prisma
 
 # Set ownership
 RUN chown -R nextjs:nodejs /app

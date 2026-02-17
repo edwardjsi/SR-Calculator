@@ -71,7 +71,7 @@ resource "random_password" "db_password" {
 resource "aws_db_instance" "main" {
   identifier     = "${var.project_name}-${var.environment}-postgres"
   engine         = "postgres"
-  engine_version = "13.13"
+  engine_version = "15.15"
   instance_class = var.db_instance_class
 
   allocated_storage     = var.db_allocated_storage
