@@ -1,0 +1,510 @@
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:ap-south-1:251876202726:service/sr-calculator-dev/sr-calculator-dev-service",
+        "serviceName": "sr-calculator-dev-service",
+        "clusterArn": "arn:aws:ecs:ap-south-1:251876202726:cluster/sr-calculator-dev",
+        "loadBalancers": [
+            {
+                "targetGroupArn": "arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1",
+                "containerName": "app",
+                "containerPort": 3000
+            }
+        ],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:ap-south-1:251876202726:task-definition/sr-calculator-dev:3",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": false,
+                "rollback": false
+            },
+            "maximumPercent": 200,
+            "minimumHealthyPercent": 100,
+            "strategy": "ROLLING",
+            "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/6678603759577648039",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:ap-south-1:251876202726:task-definition/sr-calculator-dev:3",
+                "desiredCount": 0,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2026-02-18T03:31:22.355000+05:30",
+                "updatedAt": "2026-02-18T03:31:22.355000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0f02dc3c38fd9c8cc",
+                            "subnet-0ff850ee45b2009f9"
+                        ],
+                        "securityGroups": [
+                            "sg-021f8f6313857b178"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/6678603759577648039 in progress."
+            },
+            {
+                "id": "ecs-svc/6452838389381472379",
+                "status": "ACTIVE",
+                "taskDefinition": "arn:aws:ecs:ap-south-1:251876202726:task-definition/sr-calculator-dev:3",
+                "desiredCount": 1,
+                "pendingCount": 0,
+                "runningCount": 1,
+                "failedTasks": 0,
+                "createdAt": "2026-02-18T02:09:09.681000+05:30",
+                "updatedAt": "2026-02-18T03:29:48.626000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0f02dc3c38fd9c8cc",
+                            "subnet-0ff850ee45b2009f9"
+                        ],
+                        "securityGroups": [
+                            "sg-021f8f6313857b178"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "COMPLETED",
+                "rolloutStateReason": "ECS deployment ecs-svc/6452838389381472379 completed."
+            }
+        ],
+        "roleArn": "arn:aws:iam::251876202726:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+            {
+                "id": "a6c77f08-f062-496a-9e25-a8f18838dbd3",
+                "createdAt": "2026-02-18T03:29:48.634000+05:30",
+                "message": "(service sr-calculator-dev-service) has reached a steady state."
+            },
+            {
+                "id": "454d1f3b-8f88-426a-ad2f-be7139806301",
+                "createdAt": "2026-02-18T03:29:48.633000+05:30",
+                "message": "(service sr-calculator-dev-service) (deployment ecs-svc/6452838389381472379) deployment completed."
+            },
+            {
+                "id": "0c4d90d2-99bd-41a3-a3bf-a606db6e09e0",
+                "createdAt": "2026-02-18T03:23:05.783000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "8d739e8f-4cf5-40fc-b019-001eb7ed1833",
+                "createdAt": "2026-02-18T03:22:24.344000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task a001599735894cbf9a9a6ab2f1fb927d)."
+            },
+            {
+                "id": "ff272a99-11cf-4723-bde3-c752ff8e955a",
+                "createdAt": "2026-02-18T03:19:26.698000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "78c1bd29-f470-4d65-b576-34848e788607",
+                "createdAt": "2026-02-18T03:19:26.576000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/0104929260315144539) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "384fb987-c4bb-4eb4-9cfb-752e50f52857",
+                "createdAt": "2026-02-18T03:19:26.571000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "87a2abc4-ec4f-4b08-980b-1b7478bb7a13",
+                "createdAt": "2026-02-18T03:19:16.002000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 2cbac8f72fe0490a999ccfe5d092d918)."
+            },
+            {
+                "id": "e506696f-ba44-4689-a18a-5212fe17d475",
+                "createdAt": "2026-02-18T03:19:15.962000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 2cbac8f72fe0490a999ccfe5d092d918) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "94430a94-891e-4962-92e0-a1a2ce6939d6",
+                "createdAt": "2026-02-18T03:18:03.357000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "a4f62a83-f949-4862-9d3f-506a8e0001a1",
+                "createdAt": "2026-02-18T03:17:33.704000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 2cbac8f72fe0490a999ccfe5d092d918)."
+            },
+            {
+                "id": "e5aab0ce-29b7-47d2-b7d4-2b4bfed575df",
+                "createdAt": "2026-02-18T03:16:40.982000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "04a71992-842d-4fbc-b516-3e9e84bd711d",
+                "createdAt": "2026-02-18T03:16:40.876000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/6452838389381472379) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "60a269f1-29a3-404c-bbc7-64b6aa154f52",
+                "createdAt": "2026-02-18T03:16:40.871000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "a87df475-423b-4028-b366-79049933bb63",
+                "createdAt": "2026-02-18T03:16:30.194000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 06d79500004f441aa3c2a03c36d74c8c)."
+            },
+            {
+                "id": "1f808b70-e74a-4fdd-80f2-aa8a06b7d2d3",
+                "createdAt": "2026-02-18T03:16:30.155000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 06d79500004f441aa3c2a03c36d74c8c) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "a5b81d33-e299-42a3-85ef-a2242106899b",
+                "createdAt": "2026-02-18T03:15:28.170000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "eceb6075-100b-4f0e-9d15-6d0b56ad8874",
+                "createdAt": "2026-02-18T03:14:37.234000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 06d79500004f441aa3c2a03c36d74c8c)."
+            },
+            {
+                "id": "7e29760b-830b-451a-9233-4102f187b866",
+                "createdAt": "2026-02-18T03:11:30.190000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "680e8147-14e8-4389-a497-91d799a91896",
+                "createdAt": "2026-02-18T03:11:30.074000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/0104929260315144539) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "ea27a531-6d03-4078-b40a-752abb58c67d",
+                "createdAt": "2026-02-18T03:11:30.071000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "04a6449d-aa65-4c4a-b34b-5d2bd516865a",
+                "createdAt": "2026-02-18T03:11:19.707000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 9e2808215d4b4834b4351ca620bbac9e)."
+            },
+            {
+                "id": "a54e0ce9-8a50-40b3-8323-b67dd6d66b20",
+                "createdAt": "2026-02-18T03:11:19.671000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 9e2808215d4b4834b4351ca620bbac9e) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "a04d7f3a-3133-4da2-8090-55a1339dd89b",
+                "createdAt": "2026-02-18T03:10:07.277000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "271e31ee-11e5-493d-bb0b-703661b00518",
+                "createdAt": "2026-02-18T03:09:36.045000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 9e2808215d4b4834b4351ca620bbac9e)."
+            },
+            {
+                "id": "670cb0c1-754b-4b5a-96ef-96aff92d39b4",
+                "createdAt": "2026-02-18T03:08:54.436000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "9d03eff6-d163-410c-ad36-0b757d475823",
+                "createdAt": "2026-02-18T03:08:54.332000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/6452838389381472379) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "a377006a-75d7-43ca-aca5-9df5676244b2",
+                "createdAt": "2026-02-18T03:08:54.328000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "9f8d68b1-048f-424e-9e54-8f4620933d9a",
+                "createdAt": "2026-02-18T03:08:44.030000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 7328b741226641e08f246d74b168944f)."
+            },
+            {
+                "id": "78687b77-1033-412a-9076-0ca4fac20bd3",
+                "createdAt": "2026-02-18T03:08:43.993000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 7328b741226641e08f246d74b168944f) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "22c24357-fee2-4338-80d8-201d5baa1f85",
+                "createdAt": "2026-02-18T03:07:31.080000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "63714bcf-4daf-400f-9902-e7ec2c298f1f",
+                "createdAt": "2026-02-18T03:06:49.963000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 7328b741226641e08f246d74b168944f)."
+            },
+            {
+                "id": "35ac3117-7040-4376-87a0-8d5daf5ac8e6",
+                "createdAt": "2026-02-18T03:03:51.578000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "cf183201-b5a2-49b8-a77d-573d2752124a",
+                "createdAt": "2026-02-18T03:03:51.479000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/0104929260315144539) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "651ee931-0bd2-4006-82d0-665431fe23dd",
+                "createdAt": "2026-02-18T03:03:51.474000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "58343c00-4ff9-4c0a-9a9a-49e76602711e",
+                "createdAt": "2026-02-18T03:03:42.652000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 6c1a454e4a034150976b6218004eea2f)."
+            },
+            {
+                "id": "6a4becf4-5419-4439-8709-f07badc5dc0e",
+                "createdAt": "2026-02-18T03:03:42.617000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 6c1a454e4a034150976b6218004eea2f) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "b482e522-4423-4c79-accc-cc2f0ab858d6",
+                "createdAt": "2026-02-18T03:02:30.052000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "acca77c6-d49a-44b6-a100-a5e9f096a475",
+                "createdAt": "2026-02-18T03:01:59.627000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 6c1a454e4a034150976b6218004eea2f)."
+            },
+            {
+                "id": "080eec70-aed1-450a-8111-6d257f17c17f",
+                "createdAt": "2026-02-18T03:00:56.797000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "76453e94-b2f2-4e87-afde-732e18a44f99",
+                "createdAt": "2026-02-18T03:00:56.691000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/6452838389381472379) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "61b07c37-75f6-4f14-b7c2-a2dfbf10b5c1",
+                "createdAt": "2026-02-18T03:00:56.686000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "a4b303b8-f0a5-4683-b46d-a7597b48f09b",
+                "createdAt": "2026-02-18T03:00:46.444000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 368ae2f3e5814fe7bb636637015169f2)."
+            },
+            {
+                "id": "b89c5382-19ff-4165-abb0-978b8a1c1616",
+                "createdAt": "2026-02-18T03:00:46.410000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 368ae2f3e5814fe7bb636637015169f2) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "0dc21e8c-0f12-415e-bc3f-722eb4965521",
+                "createdAt": "2026-02-18T02:59:33.916000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "8b7ec974-6e45-44b6-ad1e-4d91629f50c4",
+                "createdAt": "2026-02-18T02:58:41.783000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 368ae2f3e5814fe7bb636637015169f2)."
+            },
+            {
+                "id": "a93fce1d-5a30-4419-8b06-d45845390bbf",
+                "createdAt": "2026-02-18T02:56:15.529000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "a8d10052-2a9e-4dec-9427-ebc7525b4977",
+                "createdAt": "2026-02-18T02:56:15.434000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/0104929260315144539) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "b46dfe8e-ec07-4106-a345-f5337ef41ea3",
+                "createdAt": "2026-02-18T02:56:15.431000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "f0a7f10d-24b9-4c1f-8d7e-8a3f236b4eab",
+                "createdAt": "2026-02-18T02:56:05.200000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task ddacbb2abd3a42fba263e235cfe831a4)."
+            },
+            {
+                "id": "53ebfed5-a5fd-4219-bd8e-b6d7162de043",
+                "createdAt": "2026-02-18T02:56:05.157000+05:30",
+                "message": "(service sr-calculator-dev-service) (task ddacbb2abd3a42fba263e235cfe831a4) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "d8726cd1-0b6b-484e-8655-6d74beb36eca",
+                "createdAt": "2026-02-18T02:54:53.111000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "4306f214-602b-47f7-991c-3c9ea54c990b",
+                "createdAt": "2026-02-18T02:54:21.989000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task ddacbb2abd3a42fba263e235cfe831a4)."
+            },
+            {
+                "id": "78f7eece-44be-49fd-9749-5ab2e0738886",
+                "createdAt": "2026-02-18T02:52:48.134000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "e57e4489-25ed-461f-b964-a8da612baf3c",
+                "createdAt": "2026-02-18T02:52:48.043000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/6452838389381472379) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "3abf91a7-89bf-4628-a675-d1526fa29280",
+                "createdAt": "2026-02-18T02:52:48.039000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "477108ae-2aef-4f64-92ee-aa16f91d932a",
+                "createdAt": "2026-02-18T02:52:36.888000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 6cec5fedd0c4445cb7b8f176b440590c)."
+            },
+            {
+                "id": "2ec9c47d-16b3-40ee-bc0f-9203e4e79195",
+                "createdAt": "2026-02-18T02:52:36.852000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 6cec5fedd0c4445cb7b8f176b440590c) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "90d2db3b-5e12-4286-b682-76e3e8c7b0e6",
+                "createdAt": "2026-02-18T02:51:24.993000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "ca09f5b9-b36e-4815-8959-fd36253e96cd",
+                "createdAt": "2026-02-18T02:50:44.197000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 6cec5fedd0c4445cb7b8f176b440590c)."
+            },
+            {
+                "id": "5b021f9f-0b19-498f-b2d2-e2d0bdd19b85",
+                "createdAt": "2026-02-18T02:48:29.059000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "18deb4e6-8758-477e-8bcc-5bf5622417cd",
+                "createdAt": "2026-02-18T02:48:28.968000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/0104929260315144539) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "57edde21-4392-483c-90a6-e48e3b8c0f5d",
+                "createdAt": "2026-02-18T02:48:28.965000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "fc99112f-2aa2-4068-9e9d-1244de979ec2",
+                "createdAt": "2026-02-18T02:48:18.984000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task 95d6256963b345149fa5160399c3c7cb)."
+            },
+            {
+                "id": "58fc8197-36e6-4eb8-9379-02a30ef71569",
+                "createdAt": "2026-02-18T02:48:18.940000+05:30",
+                "message": "(service sr-calculator-dev-service) (task 95d6256963b345149fa5160399c3c7cb) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "fb1a5cff-addd-4a6d-8952-f173fef05885",
+                "createdAt": "2026-02-18T02:47:06.218000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "f0122368-204e-4bf7-9af5-34571eb8a976",
+                "createdAt": "2026-02-18T02:46:34.863000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task 95d6256963b345149fa5160399c3c7cb)."
+            },
+            {
+                "id": "991edc61-2452-4162-b9ce-e3561402d21d",
+                "createdAt": "2026-02-18T02:45:00.628000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "6d263eea-74a4-40d5-b7ed-959311452d53",
+                "createdAt": "2026-02-18T02:45:00.540000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/6452838389381472379) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "754510be-f820-4337-a17d-11fd65671495",
+                "createdAt": "2026-02-18T02:45:00.536000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "64313722-ea90-4d72-85ef-2665b74f4a36",
+                "createdAt": "2026-02-18T02:44:50.166000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task c70adef3bf944ac29f6b3669eee3146f)."
+            },
+            {
+                "id": "830793ac-7ba7-4d4b-8711-d2433b7c1160",
+                "createdAt": "2026-02-18T02:44:50.131000+05:30",
+                "message": "(service sr-calculator-dev-service) (task c70adef3bf944ac29f6b3669eee3146f) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "f59edeb6-46a0-4282-a4b7-821ed4b679b2",
+                "createdAt": "2026-02-18T02:43:48.092000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "505ea102-098c-44f1-91fc-f5130f6dad7c",
+                "createdAt": "2026-02-18T02:43:06.414000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task c70adef3bf944ac29f6b3669eee3146f)."
+            },
+            {
+                "id": "1b6dd2e8-49e3-46ce-8a72-80b82f774aa3",
+                "createdAt": "2026-02-18T02:40:41.286000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "8b073555-0924-46fc-96a0-0e840c5770ca",
+                "createdAt": "2026-02-18T02:40:41.194000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/0104929260315144539) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "0a163cad-f287-45bd-a2e1-f4eb4f0455be",
+                "createdAt": "2026-02-18T02:40:41.189000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "05f1c7d0-659f-47bb-827f-84c0c2868b50",
+                "createdAt": "2026-02-18T02:40:31.335000+05:30",
+                "message": "(service sr-calculator-dev-service) has stopped 1 running tasks: (task e4fb9a2a672e41e0a40d9d48bddec600)."
+            },
+            {
+                "id": "58477d94-b875-4a29-805a-e3a9d553e7cc",
+                "createdAt": "2026-02-18T02:40:31.294000+05:30",
+                "message": "(service sr-calculator-dev-service) (task e4fb9a2a672e41e0a40d9d48bddec600) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1) due to (reason Health checks failed with these codes: [404])."
+            },
+            {
+                "id": "adec1f74-54cd-40a0-a848-9e39572c2915",
+                "createdAt": "2026-02-18T02:39:19.574000+05:30",
+                "message": "(service sr-calculator-dev-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "236784b6-a9c8-4ada-9522-eb7c119ace5f",
+                "createdAt": "2026-02-18T02:38:47.499000+05:30",
+                "message": "(service sr-calculator-dev-service) has started 1 tasks: (task e4fb9a2a672e41e0a40d9d48bddec600)."
+            },
+            {
+                "id": "5430f8db-7b72-42d7-9492-d073a990bc26",
+                "createdAt": "2026-02-18T02:37:14.462000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-south-1:251876202726:targetgroup/sr-calculator-dev-tg/a35cff545b61eed1)"
+            },
+            {
+                "id": "19bbb2af-fa1d-4a94-a39f-c777a49b9d93",
+                "createdAt": "2026-02-18T02:37:14.364000+05:30",
+                "message": "(service sr-calculator-dev-service, taskSet ecs-svc/6452838389381472379) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "1e28d245-901e-4fcb-98e4-aacf7743c141",
+                "createdAt": "2026-02-18T02:37:14.360000+05:30",
+                "message": "(service sr-calculator-dev-service) deregistered 1 targets in (target-grou
