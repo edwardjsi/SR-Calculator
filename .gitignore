@@ -64,3 +64,4 @@ logs/
 *.tfstate
 *.tfstate.backup
 .tflock.hcl
+*.zip
