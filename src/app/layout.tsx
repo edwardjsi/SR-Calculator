@@ -1,4 +1,26 @@
 import type { Metadata } from "next";
+import "./globals.css";
+// Force API routes to be included in build
+import '../lib/route-manifest'
+
+export const metadata: Metadata = {
+  title: "Sovereign Retirement Calculator",
+  description: "Calculate your retirement savings",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
