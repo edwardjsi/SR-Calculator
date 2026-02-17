@@ -1,0 +1,42 @@
+# SR Calculator - Docker Compose for Local Development
+# Usage: docker-compose up -d
+
+services:
+  # Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  # PostgreSQL Database (Optional - for future use)
+  # Uncomment if you need database persistence
+  # postgres:
+  #   image: postgres:15-alpine
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_USER: srcalc
+  #     POSTGRES_PASSWORD: srcalc123
+  #     POSTGRES_DB: srcalculator
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U srcalc"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+# volumes:
+#   postgres_data:

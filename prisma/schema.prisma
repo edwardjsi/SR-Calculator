@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User Model - Stores user account information
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String
+  phone         String?
+  age           Int
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  // Relations
+  calculations  Calculation[]
+}
+
+// Calculation Model - Stores user's retirement planning data
+model Calculation {
+  id                           String   @id @default(cuid())
+  userId                       String
+  user                         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Input Parameters
+  currentAge                   Int
+  retirementAge                Int
+  currentSavings               Float    // Initial corpus
+  monthlyContribution          Float    // Monthly savings
+  expectedAnnualReturnRate     Float
+  currentMonthlyExpense        Float
+  annualInflationRate          Float
+  postRetirementNominalReturn  Float
+  
+  // Calculated Results (cached)
+  retirementCorpus             Float?
+  futureMonthlyExpense         Float?
+  retirementDurationYears      Float?
+  
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+  
+  @@index([userId])
+}
